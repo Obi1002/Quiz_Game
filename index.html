@@ -5,10 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <title>Coding Quiz</title>
+    <title>Quiz Game</title>
 </head>
 <body>
- 
+  <!-- creating the container that stores the questions -->
+  <div class=“container”>
+    <div class=“questions-container” id="hide">
+      <div class=“question”>Questions</div>
+      <!-- created the buttons for the questions when the appear -->
+      <div class="answer-buttons" id="btn-grid">
+        <button class="btn">Answer A</button>
+        <button class="btn">Answer B</button>
+        <button class="btn">Answer C</button>
+        <button class="btn">Answer D</button>
+      </div>
+    </div>
+    <!-- created the start button for the game -->
+    <div class=“controls”>
+      <button id="start-btn" class="start-btn btn">Start</button>
+    </div>
+  </div>
     
 <script src="./assets/javascript/script.js"></script>    
 </body>
