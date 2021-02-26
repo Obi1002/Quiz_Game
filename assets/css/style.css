@@ -10,7 +10,7 @@ body {
 }
 
 .container {
-    width: 800px;
+    width: 800%;
     max-width: 80%;
     background-color: aquamarine;
     border-radius: 5px;
