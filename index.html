@@ -10,22 +10,31 @@
 <body>
   <!-- creating the container that stores the questions -->
   <div class="container">
-    <div class="questions-container" id="hide">
-      <div class="question">Questions<span>Timer</span></div>
+    <div id="question-container" class="hide">
+      <span id="timer">60</span>
+      <div id="question">Questions<span>Timer</span></div>
       <!-- created the buttons for the questions when the appear -->
       <div class="answer-buttons" id="btn-grid">
-        <button class="btn">Answer A</button>
-        <button class="btn">Answer B</button>
-        <button class="btn">Answer C</button>
-        <button class="btn">Answer D</button>
+        <button class="btn" data-choice="0">Answer A</button>
+        <button class="btn" data-choice="1">Answer B</button>
+        <button class="btn" data-choice="2">Answer C</button>
+        <button class="btn" data-choice="3">Answer D</button>
       </div>
     </div>
     <!-- created the start button for the game -->
     <div class="controls">
-      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="start-btn" class="btn">Start</button>
+      <button id="next-btn" class="btn hide">Next</button>
     </div>
   </div>
-    
+  <!-- create end game section -->
+    <div id="result" class="hide">
+      <img src="./assets/Images/game over.gif" alt="Good Job Icon">
+      <h3>CONGRATS!<span>You have reached the end of the game.</span></h3>
+      <h3 id="points">You Got 6 out of 6</h3>
+      <button id="quit">Finish Quiz</button>
+      <button id="startAgain">Start Again</button>
+    </div>
 <script src="./assets/javascript/script.js"></script>    
 </body>
 </html>
