@@ -6,22 +6,27 @@ var answerButtonsElement = document.querySelector('.answer-buttons');
 var answerButtons = document.querySelectorAll('.answer-buttons .btn');
 var nextButton = document.getElementById('next-btn');
 var timerEl = document.getElementById('timer');
+var pointsEl = document.getElementById('points');
+var score = 0;
+var resultEl = document.getElementById('result');
+var containerEl = document.getElementsByClassName('container');
+var interval;
+var timeLeft = 60;
 
 let currentQuestionIndex;
 
-// create timer
-var questionTimer;
+// // create timer
+// var questionTimer;
 // set timer for each question
 function setTimer() {
-    questionTimer = 60;
-    var interval = setInterval(function() {
-        if (questionTimer <= 0) {
-            clearInterval(interval);
+    // questionTimer = 60;
+        interval = setInterval(function() {
+        if (timeLeft <= 0) {
             endGame();
             return;
         }
-        questionTimer--; // decrement the timer
-        timerEl.innerText = questionTimer;
+        timeLeft--; // decrement the timer
+        timerEl.innerText = timeLeft;
     }, 1000);
 }
 
@@ -62,11 +67,16 @@ answerButtonsElement.addEventListener('click', function(event) {
         if (checkAnswer(answer)) {
             // run correct code
             console.log('correct');
+            // tracking the score
             element.classList.add('correct');
+            console.log('score');
+            score = score + 1;
         } else {
             // run incorrect code
             console.log('incorrect');
             element.classList.add('wrong');
+            // time left = -=5
+            timeLeft -=5;
         };
         // show the next button
         nextButton.classList.toggle('hide');
@@ -157,5 +167,20 @@ const questions = [
 // end the quiz 
 // I need to finish the endGame function, scoreboard, enter name and save score in local storage. 
 function endGame() {
+    clearInterval(interval);
     console.log('ended');
+    pointsEl.innerText = score;
+    resultEl.classList.toggle('hide');
+    containerEl[0].classList.toggle('hide');
+    var savedGames = localStorage.getItem('lastScore');
+    console.log(savedGames);
+    addToScoreboard(userName.value);
+}
+
+// create the local storage
+function addToScoreboard (name) {
+    var savedGames = {}
+    savedGames.name = name;
+    savedGames.value = score;
+    localStorage.setItem('lastScore', JSON.stringify(savedGames))
 }
