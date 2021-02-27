@@ -190,4 +190,3 @@ function addToScoreboard (name) {
 }
 
 submitBtn.addEventListener('click');
-// last thing
