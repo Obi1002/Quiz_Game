@@ -4,7 +4,7 @@ body {
     margin: 0;
     display: flex;
     width: 100vw;
-    height: 70vw;
+    height: 45vw;
     justify-content: center;
     align-items: center;
 }
@@ -28,7 +28,7 @@ body {
     outline: none;
     display: inline-block;
     position: relative;
-    left: 340px;
+    left: 600px;
     bottom: 20px;
 }
 
@@ -94,4 +94,16 @@ body {
 
 .hide {
     display: none;
+}
+
+#userName {
+    margin: 3rem auto;
+    max-width: 60vw;
+    width: 50ch;
+}
+
+#name-initial {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(218, 218, 218)
 }

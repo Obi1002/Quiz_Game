@@ -12,6 +12,9 @@ var resultEl = document.getElementById('result');
 var containerEl = document.getElementsByClassName('container');
 var interval;
 var timeLeft = 60;
+var userNameEl = document.getElementById('userName')
+var currentVal = userName.value;
+var submitBtn = document.getElementById('submit-btn')
 
 let currentQuestionIndex;
 
@@ -174,6 +177,7 @@ function endGame() {
     containerEl[0].classList.toggle('hide');
     var savedGames = localStorage.getItem('lastScore');
     console.log(savedGames);
+    userNameEl.classList.toggle('hide');
     addToScoreboard(userName.value);
 }
 
@@ -184,3 +188,6 @@ function addToScoreboard (name) {
     savedGames.value = score;
     localStorage.setItem('lastScore', JSON.stringify(savedGames))
 }
+
+submitBtn.addEventListener('click');
+// last thing
